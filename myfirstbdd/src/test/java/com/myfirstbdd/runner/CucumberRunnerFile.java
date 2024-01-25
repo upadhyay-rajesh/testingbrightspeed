@@ -7,7 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features"
+		plugin = {
+				"json:target/cucumbertest.json",
+				"html:target/htmlreport"
+		},
+		features = "src/test/resources/features",
+		glue ="com.myfirstbdd.step" 
 		)
 public class CucumberRunnerFile {
 
